@@ -1,0 +1,17 @@
+# Ignore Git files and the gitignore file itself
+.git
+.gitignore
+
+# Exclude VS Code settings
+.vscode
+
+# Optionally exclude large data files (if they are not needed for the build)
+data/*.zip
+
+# R project related files that are not required in the container
+.Rproj.user
+.Rhistory
+.RData
+
+# Folders
+intermdetiate-data/

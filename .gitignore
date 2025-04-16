@@ -1,5 +1,14 @@
-.Rproj.user
+# R-related files
 .Rhistory
 .RData
-.Ruserdata
-/intermediate-data/
+.Rproj.user
+
+# VS Code settings and launch configurations
+.vscode/
+
+# Log files and environment files
+*.log
+.env
+
+# folders
+intermediate-data/

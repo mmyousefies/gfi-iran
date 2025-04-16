@@ -1,0 +1,25 @@
+{
+    "name": "GFI Iran Docker Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "../"
+    },
+    "settings": {
+        "r.rterm.linux": "/usr/bin/R",
+        "r.alwaysUseActiveTerminal": true,
+        "notebook.experimental.allowUntitledNotebooks": false
+    },
+    "extensions": [
+        "Ikuyadeu.r",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "RDebugger.r-debugger",
+        "REditorSupport.r",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-cell-tags"
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "remoteUser": "root"
+}
