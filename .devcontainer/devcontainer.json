@@ -4,6 +4,10 @@
         "dockerfile": "Dockerfile",
         "context": "../"
     },
+    "containerEnv": {
+        "RENV_PATHS_LIBRARY": "/opt/renv/library",
+        "RENV_CONFIG_CACHE_SYMLINKS": "TRUE"
+    },
     "settings": {
         "r.rterm.linux": "/usr/bin/R",
         "r.alwaysUseActiveTerminal": true,
