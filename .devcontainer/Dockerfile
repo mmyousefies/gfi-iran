@@ -1,7 +1,7 @@
 #syntax=docker/dockerfile:1.4
 
 # Use the official R base image
-FROM rocker/tidyverse:latest
+FROM rocker/tidyverse:4.4 
 
 # Install system requirements (including build‐essential) and Python/Jupyter
 RUN apt-get update && apt-get install -y \
