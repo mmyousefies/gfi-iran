@@ -1,29 +1,62 @@
 {
-    "name": "GFI Iran Docker Dev Container",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": "../"
-    },
-    "containerEnv": {
-        "RENV_PATHS_LIBRARY": "/opt/renv/library",
-        "RENV_CONFIG_CACHE_SYMLINKS": "TRUE"
-    },
-    "settings": {
-        "r.rterm.linux": "/usr/bin/R",
-        "r.alwaysUseActiveTerminal": true,
-        "notebook.experimental.allowUntitledNotebooks": false
-    },
-    "extensions": [
-        "Ikuyadeu.r",
+  "name": "Women's GFI Iran",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "../"
+  },
+  "runArgs": [
+    "--network=host"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cweijan.vscode-office",
+        "eamodio.gitlens",
+        "ikuyadeu.r-pack",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
         "ms-toolsai.jupyter",
         "ms-toolsai.jupyter-keymap",
-        "RDebugger.r-debugger",
-        "REditorSupport.r",
         "ms-toolsai.jupyter-renderers",
-        "ms-toolsai.vscode-jupyter-cell-tags"
-    ],
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-    ],
-    "remoteUser": "root"
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-powertoys",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "rdebugger.r-debugger",
+        "reditorsupport.r"
+      ],
+      "settings": {
+        "[r]": {
+          "editor.defaultFormatter": "Ikuyadeu.r"
+        },
+        "r.rterm.linux": "/usr/bin/R",
+        "r.formatter": "styler",
+        "r.alwaysUseActiveTerminal": true,
+        "notebook.experimental.allowUntitledNotebooks": false,
+        "editor.formatOnSave": true,
+        "editor.autoIndent": "full",
+        "editor.formatOnType": true,
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        // // "r.lsp.usePipeTransport": true,
+        // // "r.lsp.path": "/usr/bin/R",
+        // // "r.lsp.debug": false,
+        // //               "notebook.defaultCellLanguage": "r",
+        "notebook.outputScrolling": "off",
+        "notebook.lineNumbers": "on",
+        // // "r.lsp.formatting": true,
+        // // "r.lsp.diagnostics": true,
+        "notebook.cellToolbarLocation": {
+          "default": "left"
+        },
+        // // "jupyter.useDefaultConfigForJupyter": false,
+        // // "jupyter.jupyterServerType": "local",
+        "jupyter.variableExplorer.fontSize": 12,
+        "jupyter.variableExplorer.showDataFrameSummary": true
+      }
+    }
+  },
+  "remoteUser": "root"
 }
